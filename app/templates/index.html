@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>YouTube字幕 → 整形TXT</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<main class="container">
+<h1>YouTube字幕 → 整形TXT</h1>
+<p class="muted">URL を貼って「ダウンロード」を押すだけ。自動生成字幕にも対応（可能な限り）。</p>
+
+
+<form method="post" action="/process" class="card">
+<label for="url">YouTube URL</label>
+<input id="url" name="url" type="url" placeholder="https://www.youtube.com/watch?v=..." required />
+
+
+<label for="lang">字幕の優先</label>
+<select id="lang" name="lang">
+<option value="auto" selected>自動（日本語→英語）</option>
+<option value="ja">日本語のみ</option>
+<option value="en">英語のみ</option>
+</select>
+
+
+<button type="submit">整形テキストをダウンロード</button>
+</form>
+
+
+<section class="notes">
+<ul>
+<li>出力ファイル名は <code>VIDEO_ID_trimed.txt</code> です。</li>
+<li>字幕が提供されていない動画は処理できません。</li>
+</ul>
+</section>
+</main>
+</body>
+</html>
